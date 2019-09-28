@@ -57,7 +57,9 @@ Results on CNN/DailyMail (20/8/2019):
 </table>
 
 **Python version**: This code is in Python3.6
+
 cd o3
+
 conda activate p36
 
 **Package Requirements **:
