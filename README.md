@@ -62,9 +62,9 @@ cd o3
 
 conda activate p36
 
-**Package Requirements **:
+**Requirements**: 
 
-(torch==1.1.0, pytorch_transformers tensorboardX multiprocess pyrouge)
+#torch==1.1.0, pytorch_transformers tensorboardX multiprocess pyrouge
 
 pip install torch-0.1.10.post1-cp36-cp36m-linux_x86_64.whl
 
