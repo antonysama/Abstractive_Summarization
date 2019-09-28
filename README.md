@@ -1,7 +1,5 @@
 # PreSumm
 
-**This code is for EMNLP 2019 paper [Text Summarization with Pretrained Encoders](https://arxiv.org/abs/1908.08345)**
-
 **Python version**: This code is in Python3.6
 
 cd o3
@@ -25,21 +23,25 @@ python PreSumm/src/preprocess.py -mode format_to_bert -raw_path ~/o3/PreSumm/raw
 **Updates**: For encoding a text longer than 512 tokens, for example 800. Set max_pos to 800 during both preprocessing and training.
 
 ### 1.  Connecte to the pre-downloaded Stanford CoreNLP & test it
-
 export CLASSPATH=~/o3/stanford/stanford-corenlp-3.9.2.jar
 
 echo "Please tokenize this text." | java edu.stanford.nlp.process.PTBTokenizer
 
 ### 2.   Sentence Splitting and Tokenization
+```
+python PreSumm/src/preprocess.py -mode tokenize -raw_path ~/o3/PreSumm/raw_data/ -save_path ~/o3/PreSumm/json_data/tokenized -log_file ~/o3/PreSumm/logs/cnndm.log
 
 ```
-python PreSumm/src/preprocess.py -mode tokenize -raw_path ~/o3/PreSumm/raw_data/ -save_path ~/o3/PreSumm/json_data/ -log_file ~/o3/PreSumm/logs/cnndm.log
+
+### 3.  Tokenized Json to Simple Json 
+```
+python PreSumm/src/preprocess.py -mode format_to_lines -raw_path ~/o3/PreSumm/json_data/ -save_path ~/o3/PreSumm/json_data/simple -n_cpus 1 -use_bert_basic_tokenizer false -map_path ~/o3/PreSumm/urls/
 
 ```
-### 3.  Json to PyTorch 
 
+### 4.  Simple Json to PyTorch (pt)
 ```
-python PreSumm/src/preprocess.py -mode format_to_bert -raw_path ~/o3/PreSumm/json_data/. -save_path ~/o3/PreSumm/bert_data  -lower -n_cpus 1 -log_file ~/o3/PreSumm/logs/preprocess.log
+python PreSumm/src/preprocess.py -mode format_to_bert -raw_path ~/o3/PreSumm/json_data/simple -save_path ~/o3/PreSumm/bert_data  -lower -n_cpus 1 -log_file ~/o3/PreSumm/logs/preprocess.log
 
 ```
 
@@ -51,7 +53,7 @@ python PreSumm/src/preprocess.py -mode format_to_bert -raw_path ~/o3/PreSumm/jso
 
 #### BertAbs
 ```
-python PreSumm/src/train.py  -task abs -mode train -bert_data_path ~/o3/PreSumm/bert_data -dec_dropout 0.2  -model_path ~/o3/PreSumm/models -sep_optim true -lr_bert 0.002 -lr_dec 0.2 -save_checkpoint_steps 2000 -batch_size 10 -train_steps 4 -report_every 2 -accum_count 1 -use_bert_emb true -use_interval true -warmup_steps_bert 4 -warmup_steps_dec 2 -max_pos 800 -visible_gpus 1  -log_file ~/o3/PreSumm/logs/abs_bert_cnndm
+python PreSumm/src/train.py  -task abs -mode train -bert_data_path ~/o3/PreSumm/bert_data -dec_dropout 0.2  -model_path ~/o3/PreSumm/models -sep_optim true -lr_bert 0.002 -lr_dec 0.2 -save_checkpoint_steps 2000 -batch_size 10 -train_steps 4 -report_every 2 -accum_count 1 -use_bert_emb true -use_interval true -warmup_steps_bert 4 -warmup_steps_dec 2 -max_pos 512 -visible_gpus 1  -log_file ~/o3/PreSumm/logs/abs_bert_cnndm
 ```
 
 ## Model Evaluation
