@@ -66,17 +66,19 @@ conda activate p36
 
 #torch==1.1.0, pytorch_transformers tensorboardX multiprocess pyrouge
 
+pip install multiprocess
+
+pip install tensorboard
+
+pip install pytorch-transformers==1.1.0
+
 pip install torch-0.1.10.post1-cp36-cp36m-linux_x86_64.whl
-
-pip install multiproces
-
-pip install pytorch-transformers
 
 export CLASSPATH=~/o3/stanford/stanford-corenlp-3.9.2.jar
 
 echo "Please tokenize this text." | java edu.stanford.nlp.process.PTBTokenizer
 
-python /PreSumm/src/preprocess.py -mode format_to_bert -raw_path ~/o3/PreSumm/raw_data/. -save_path ~/o3/PreSumm/bert_data  -lower -n_cpus 1 -log_file ~/o3/PreSumm/logs/preprocess.log
+python PreSumm/src/preprocess.py -mode format_to_bert -raw_path ~/o3/PreSumm/raw_data/. -save_path ~/o3/PreSumm/bert_data  -lower -n_cpus 1 -log_file ~/o3/PreSumm/logs/preprocess.log
 
 **Updates**: For encoding a text longer than 512 tokens, for example 800. Set max_pos to 800 during both preprocessing and training.
 
