@@ -57,9 +57,19 @@ Results on CNN/DailyMail (20/8/2019):
 </table>
 
 **Python version**: This code is in Python3.6
+cd o3
+conda activate p36
 
-**Package Requirements**: torch==1.1.0 pytorch_transformers tensorboardX multiprocess pyrouge
+**Package Requirements
 
+pip install torch-0.1.10.post1-cp36-cp36m-linux_x86_64.whl
+pip install multiprocess
+pip install pytorch-transformers
+
+export CLASSPATH=~/o3/stanford/stanford-corenlp-3.9.2.jar
+echo "Please tokenize this text." | java edu.stanford.nlp.process.PTBTokenizer
+
+python src/preprocess.py -mode format_to_bert -raw_path ~/o3/PreSumm/raw_data/. -save_path ~/o3/PreSumm/bert_data  -lower -n_cpus 1 -log_file ~/o3/PreSumm/logs/preprocess.log**: torch==1.1.0 pytorch_transformers tensorboardX multiprocess pyrouge
 **Updates**: For encoding a text longer than 512 tokens, for example 800. Set max_pos to 800 during both preprocessing and training.
 
 
