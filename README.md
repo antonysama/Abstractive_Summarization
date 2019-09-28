@@ -47,26 +47,12 @@ python PreSumm/src/preprocess.py -mode format_to_bert -raw_path ~/o3/PreSumm/jso
 
 **First run: For the first time, you should use single-GPU, so the code can download the BERT model. Use ``-visible_gpus -1``, after downloading, you could kill the process and rerun the code with multi-GPUs.**
 
-### Extractive Setting
-
-```
-python train.py -task ext -mode train -bert_data_path BERT_DATA_PATH -ext_dropout 0.1 -model_path MODEL_PATH -lr 2e-3 -visible_gpus 0,1,2 -report_every 50 -save_checkpoint_steps 1000 -batch_size 3000 -train_steps 50000 -accum_count 2 -log_file ../logs/ext_bert_cnndm -use_interval true -warmup_steps 10000 -max_pos 512
-```
-
 ### Abstractive Setting
 
 #### BertAbs
 ```
-python train.py  -task abs -mode train -bert_data_path BERT_DATA_PATH -dec_dropout 0.2  -model_path MODEL_PATH -sep_optim true -lr_bert 0.002 -lr_dec 0.2 -save_checkpoint_steps 2000 -batch_size 140 -train_steps 200000 -report_every 50 -accum_count 5 -use_bert_emb true -use_interval true -warmup_steps_bert 20000 -warmup_steps_dec 10000 -max_pos 512 -visible_gpus 0,1,2,3  -log_file ../logs/abs_bert_cnndm
+python PreSumm/src/train.py  -task abs -mode train -bert_data_path ~/o3/PreSumm/bert_data -dec_dropout 0.2  -model_path ~/o3/PreSumm/models -sep_optim true -lr_bert 0.002 -lr_dec 0.2 -save_checkpoint_steps 2000 -batch_size 10 -train_steps 4 -report_every 2 -accum_count 1 -use_bert_emb true -use_interval true -warmup_steps_bert 4 -warmup_steps_dec 2 -max_pos 800 -visible_gpus 1  -log_file ~/o3/PreSumm/logs/abs_bert_cnndm
 ```
-#### BertExtAbs
-```
-python train.py  -task abs -mode train -bert_data_path BERT_DATA_PATH -dec_dropout 0.2  -model_path MODEL_PATH -sep_optim true -lr_bert 0.002 -lr_dec 0.2 -save_checkpoint_steps 2000 -batch_size 140 -train_steps 200000 -report_every 50 -accum_count 5 -use_bert_emb true -use_interval true -warmup_steps_bert 20000 -warmup_steps_dec 10000 -max_pos 512 -visible_gpus 0,1,2,3 -log_file ../logs/abs_bert_cnndm  -load_from_extractive EXT_CKPT   
-```
-* `EXT_CKPT` is the saved `.pt` checkpoint of the extractive model.
-
-
-
 
 ## Model Evaluation
 ```
