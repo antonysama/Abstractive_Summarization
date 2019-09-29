@@ -14,7 +14,9 @@ conda activate p36
 
 pip install multiprocess
 
-pip install tensorboard==1.0.0a6
+#pip install tensorboard==1.0.0a6
+
+pip install tensorboardX
 
 pip install pytorch-transformers==1.1.0
 
