@@ -33,12 +33,15 @@ python PreSumm/src/preprocess.py  -mode format_to_lines  -raw_path ~/o3/PreSumm/
 
 ### 4.  Simple Json to PyTorch (pt)
 python PreSumm/src/preprocess.py -mode format_to_bert -raw_path ~/o3/PreSumm/json_data/ -save_path ~/o3/PreSumm/bert_data/  -lower -n_cpus 1 -log_file ~/o3/PreSumm/logs/preprocess.log
-*After running 4, change the name of the file under bert_data to train.pt
+
+*After running #4, change the name of the file under bert_data to train.pt
 
 ## Model Training
 
 **First run: For the first time, you should use single-GPU, so the code can download the BERT model. Use ``-visible_gpus -1``, after downloading, you could kill the process and rerun the code with multi-GPUs.**
 
+
+* The folllwing are debugging numbers, and need to revert to those of the original repo.
 ### Abstractive Setting
 python PreSumm/src/train.py  -task abs -mode train -bert_data_path ~/o3/PreSumm/bert_data/ -dec_dropout 0.2  -model_path ~/o3/PreSumm/models -sep_optim true -lr_bert 0.002 -lr_dec 0.2 -save_checkpoint_steps 2 -batch_size 8 -train_steps 4 -report_every 2 -accum_count 1 -use_bert_emb true -use_interval true -warmup_steps_bert 4 -warmup_steps_dec 2 -max_pos 512 -visible_gpus -1  -log_file ~/o3/PreSumm/logs/abs_bert_cnndm
 
