@@ -1,4 +1,4 @@
-# PreSumm (Abstractive summary)
+# Abstractive Summary
 
 **Python version**: This code is in Python3.6
 
