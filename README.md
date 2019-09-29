@@ -12,11 +12,11 @@ conda activate p36
 
 pip install multiprocess
 
-pip install tensorboard
+pip install tensorboard==1.0.0a6
 
 pip install pytorch-transformers==1.1.0
 
-pip install torch-0.1.10.post1-cp36-cp36m-linux_x86_64.whl
+pip install torch==1.1.0 --user
 
 **Updates**: For encoding a text longer than 512 tokens, for example 800. Set max_pos to 800 during both preprocessing and training.
 
@@ -26,13 +26,13 @@ export CLASSPATH=~/o3/stanford/stanford-corenlp-3.9.2.jar
 echo "Please tokenize this text." | java edu.stanford.nlp.process.PTBTokenizer
 
 ### 2.   Sentence Splitting and Tokenization
-python PreSumm/src/preprocess.py -mode tokenize -raw_path ~/o3/PreSumm/raw_data/ -save_path ~/o3/PreSumm/json_data/tokenized -log_file ~/o3/PreSumm/logs/cnndm.log
+python PreSumm/src/preprocess.py  -mode tokenize  -raw_path ~/o3/PreSumm/raw_data/ -save_path ~/o3/PreSumm/json_data/tokenized/  -log_file ~/o3/PreSumm/logs/cnndm.log
 
 ### 3.  Tokenized Json to Simple Json 
-python PreSumm/src/preprocess.py -mode format_to_lines -raw_path ~/o3/PreSumm/json_data/ -save_path ~/o3/PreSumm/json_data/simple -n_cpus 1 -use_bert_basic_tokenizer false -map_path ~/o3/PreSumm/urls/
+python PreSumm/src/preprocess.py  -mode format_to_lines  -raw_path ~/o3/PreSumm/json_data/tokenized/  -save_path ~/o3/PreSumm/json_data/simple/  -n_cpus 1  -use_bert_basic_tokenizer false  -map_path ~/o3/PreSumm/urls/  -log_file ~/o3/PreSumm/logs/cnndm.log
 
 ### 4.  Simple Json to PyTorch (pt)
-python PreSumm/src/preprocess.py -mode format_to_bert -raw_path ~/o3/PreSumm/json_data/simple -save_path ~/o3/PreSumm/bert_data  -lower -n_cpus 1 -log_file ~/o3/PreSumm/logs/preprocess.log
+python PreSumm/src/preprocess.py -mode format_to_bert -raw_path ~/o3/PreSumm/json_data/simple/cnndm_sample.train.0.json -save_path ~/o3/PreSumm/bert_data  -lower -n_cpus 1 -log_file ~/o3/PreSumm/logs/preprocess.log
 
 ## Model Training
 
