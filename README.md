@@ -1,4 +1,4 @@
-# PreSumm
+# PreSumm (Abstractive summary)
 
 **Python version**: This code is in Python3.6
 
@@ -29,13 +29,10 @@ python PreSumm/src/preprocess.py  -mode tokenize  -raw_path ~/o3/PreSumm/raw_dat
 python PreSumm/src/preprocess.py  -mode format_to_lines  -raw_path ~/o3/PreSumm/json_data/  -save_path ~/o3/PreSumm/json_data2/  -n_cpus 1  -use_bert_basic_tokenizer false  -map_path ~/o3/PreSumm/urls/  -log_file ~/o3/PreSumm/logs/cnndm.log
 ### 4.  To PyTorch (& rename as 'train.pt')
 python PreSumm/src/preprocess.py -mode format_to_bert -raw_path ~/o3/PreSumm/json_data/ -save_path ~/o3/PreSumm/bert_data/  -lower -n_cpus 1 -log_file ~/o3/PreSumm/logs/preprocess.log && mv ~/o3/PreSumm/bert_data/*.pt ~/o3/PreSumm/bert_data/train.pt
-
-##  Train (Abstractive summary)
-**For the first run Use ``-visible_gpus -1``, so the code can download the BERT model. Use debugging numbers. Thereafter, check the original repo for larger numbers**
-
+###  Train 
+**For the first run use debugging numbers. Thereafter, check the original repo for larger numbers**
 python PreSumm/src/train.py  -task abs -mode train -bert_data_path ~/o3/PreSumm/bert_data/ -dec_dropout 0.2  -model_path ~/o3/PreSumm/models -sep_optim true -lr_bert 0.002 -lr_dec 0.2 -save_checkpoint_steps 2 -batch_size 8 -train_steps 4 -report_every 2 -accum_count 1 -use_bert_emb true -use_interval true -warmup_steps_bert 4 -warmup_steps_dec 2 -max_pos 512 -visible_gpus -1  -log_file ~/o3/PreSumm/logs/abs_bert_cnndm
-
-## Evaluate
+### Evaluate
  python train.py -task abs -mode validate -batch_size 3000 -test_batch_size 500 -bert_data_path BERT_DATA_PATH -log_file ../logs/val_abs_bert_cnndm -model_path MODEL_PATH -sep_optim true -use_interval true -visible_gpus 1 -max_pos 512 -max_length 200 -alpha 0.95 -min_length 50 -result_path ../logs/abs_bert_cnndm 
 
 * `-mode` can be {`validate, test`}, where `validate` will inspect the model directory and evaluate the model for each newly saved checkpoint, `test` need to be used with `-test_from`, indicating the checkpoint you want to use
