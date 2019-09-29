@@ -34,8 +34,13 @@ python PreSumm/src/preprocess.py -mode format_to_bert -raw_path ~/o3/PreSumm/jso
 
 python PreSumm/src/train.py  -task abs -mode train -bert_data_path ~/o3/PreSumm/bert_data/ -dec_dropout 0.2  -model_path ~/o3/PreSumm/models -sep_optim true -lr_bert 0.002 -lr_dec 0.2 -save_checkpoint_steps 2 -batch_size 8 -train_steps 4 -report_every 2 -accum_count 1 -use_bert_emb true -use_interval true -warmup_steps_bert 4 -warmup_steps_dec 2 -max_pos 512 -visible_gpus -1  -log_file ~/o3/PreSumm/logs/abs_bert_cnndm
 ### Evaluate
+
+python PreSumm/src/train.py -task abs -mode train -bert_data_path ~/o3/PreSumm/bert_data/ -dec_dropout 0.2 -model_path ~/o3/PreSumm/models -sep_optim true -lr_bert 0.002 -lr_dec 0.2 -save_checkpoint_steps 100 -batch_size 16 -train_steps 200 -report_every 50 -accum_count 4 -use_bert_emb true -use_interval true -warmup_steps_bert 10 -warmup_steps_dec 10 -max_pos 512 -visible_gpus -1 -log_file ~/o3/PreSumm/logs/abs_bert_cnndm
+
+ *(For colab:)
  
- python train.py -task abs -mode validate -batch_size 3000 -test_batch_size 500 -bert_data_path BERT_DATA_PATH -log_file ../logs/val_abs_bert_cnndm -model_path MODEL_PATH -sep_optim true -use_interval true -visible_gpus 1 -max_pos 512 -max_length 200 -alpha 0.95 -min_length 50 -result_path ../logs/abs_bert_cnndm 
+python ~/content/gdrive/My Drive/PreSumm/src/train.py -task abs -mode train -bert_data_path ~/content/gdrive/My Drive/PreSumm/bert_data/ -dec_dropout 0.2 -model_path ~/content/gdrive/My Drive/PreSumm/models -sep_optim true -lr_bert 0.002 -lr_dec 0.2 -save_checkpoint_steps 100 -batch_size 16 -train_steps 100 -report_every 50 -accum_count 4 -use_bert_emb true -use_interval true -warmup_steps_bert 20 -warmup_steps_dec 10 -max_pos 512 -visible_gpus -1 -log_file ~/content/gdrive/My Drive/PreSumm/logs/abs_bert_cnndm 
+ 
 
 * `-mode` can be {`validate, test`}, where `validate` will inspect the model directory and evaluate the model for each newly saved checkpoint, `test` need to be used with `-test_from`, indicating the checkpoint you want to use
 * `MODEL_PATH` is the directory of saved checkpoints
