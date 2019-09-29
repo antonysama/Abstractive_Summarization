@@ -32,7 +32,7 @@ python PreSumm/src/preprocess.py  -mode tokenize  -raw_path ~/o3/PreSumm/raw_dat
 python PreSumm/src/preprocess.py  -mode format_to_lines  -raw_path ~/o3/PreSumm/json_data/tokenized/  -save_path ~/o3/PreSumm/json_data/simple/  -n_cpus 1  -use_bert_basic_tokenizer false  -map_path ~/o3/PreSumm/urls/  -log_file ~/o3/PreSumm/logs/cnndm.log
 
 ### 4.  Simple Json to PyTorch (pt)
-python PreSumm/src/preprocess.py -mode format_to_bert -raw_path ~/o3/PreSumm/json_data/simple/cnndm_sample.train.0.json -save_path ~/o3/PreSumm/bert_data  -lower -n_cpus 1 -log_file ~/o3/PreSumm/logs/preprocess.log
+python PreSumm/src/preprocess.py -mode format_to_bert -raw_path ~/o3/PreSumm/json_data/simple/ -save_path ~/o3/PreSumm/bert_data  -lower -n_cpus 1 -log_file ~/o3/PreSumm/logs/preprocess.log
 
 ## Model Training
 
