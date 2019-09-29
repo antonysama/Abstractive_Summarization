@@ -1,0 +1,2 @@
+cuda runtime error (10) : invalid device ordinal at /pytorch/torch/csrc/cuda/Module.cpp:33 
+-----  Fixed by Setting -visible_gpus 0 (or 1) https://github.com/allenai/allennlp/issues/1090
