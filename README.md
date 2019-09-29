@@ -23,8 +23,11 @@ pip install torch==1.1.0 --user
 **Updates**: For encoding a text longer than 512 tokens, for example 800. Set max_pos to 800 during both preprocessing and training.
 ##  Preporcess
 ### 1.  Connecte to the pre-downloaded Stanford CoreNLP & test it
+
 export CLASSPATH=~/o3/stanford/stanford-corenlp/tanford-corenlp-3.9.2.jar
+
 echo "Please tokenize this text." | java edu.stanford.nlp.process.PTBTokenizer
+
 ### 2.   Split sentences and tokenize
 python PreSumm/src/preprocess.py  -mode tokenize  -raw_path ~/o3/PreSumm/raw_data/ -save_path ~/o3/PreSumm/json_data/  -log_file ~/o3/PreSumm/logs/cnndm.log
 ### 3.  To Simple Json 
