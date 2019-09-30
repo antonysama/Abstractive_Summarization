@@ -44,7 +44,7 @@ mv ~/o3/PreSumm/bert_data/*.pt ~/o3/PreSumm/bert_data/train.pt # rename file to 
 
 EX
 
-python PreSumm/train.py -task ext -mode train -bert_data_path ~/o3/PreSumm/bert_data/  -ext_dropout 0.1 -model_path ~/o3/PreSumm/models -lr 2e-3 -visible_gpus -1 -report_every 10 -save_checkpoint_steps 20 -batch_size 8 -train_steps 60 -accum_count 4 -log_file ~/o3/PreSumm/logs/ext_bert_cnndm -use_interval true -warmup_steps 10 -max_pos 512
+python PreSumm/src/train.py -task ext -mode train -bert_data_path ~/o3/PreSumm/bert_data/  -ext_dropout 0.1 -model_path ~/o3/PreSumm/models -lr 2e-3 -visible_gpus -1 -report_every 10 -save_checkpoint_steps 20 -batch_size 8 -train_steps 60 -accum_count 4 -log_file ~/o3/PreSumm/logs/ext_bert_cnndm -use_interval true -warmup_steps 10 -max_pos 512
 
 ABS
 
