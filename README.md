@@ -44,6 +44,9 @@ mv ~/o3/PreSumm/bert_data/*.pt ~/o3/PreSumm/bert_data/train.pt # rename file to 
 
 python PreSumm/src/train.py -task abs -mode train -bert_data_path ~/o3/PreSumm/bert_data/ -dec_dropout 0.2 -model_path ~/o3/PreSumm/models -sep_optim true -lr_bert 0.002 -lr_dec 0.2 -save_checkpoint_steps 20 -batch_size 8 -train_steps 60 -report_every 10 -accum_count 4 -use_bert_emb true -use_interval true -warmup_steps_bert 10 -warmup_steps_dec 2 -max_pos 512 -visible_gpus -1 -log_file ~/o3/PreSumm/logs/abs_bert_cnndm
 
+python PreSumm/src/train.py  -task abs -mode train -bert_data_path ~/o3/PreSumm/bert_data/ -dec_dropout 0.2  -model_path ~/o3/PreSumm/models -sep_optim true -lr_bert 0.002 -lr_dec 0.2 -save_checkpoint_steps 20 -batch_size 8 -train_steps 60 -report_every 20 -accum_count 4 -use_bert_emb true -use_interval true -warmup_steps_bert 5 -warmup_steps_dec 2 -max_pos 512 -visible_gpus -1 -log_file ~/o3/PreSumm/logs/abs_bert_cnndm  -load_from_extractive EXT_CKPT   
+
+
  *For colab:
  
 !python /content/gdrive/"My Drive"/PreSumm/src/train.py -task abs -mode train -bert_data_path /content/gdrive/"My Drive"/PreSumm/bert_data/ -dec_dropout 0.2 -model_path /content/gdrive/"My Drive"/PreSumm/models -sep_optim true -lr_bert 0.002 -lr_dec 0.2 -save_checkpoint_steps 20 -batch_size 16 -train_steps 200 -report_every 50 -accum_count 2 -use_bert_emb true -use_interval true -warmup_steps_bert 20 -warmup_steps_dec 10 -max_pos 512 -visible_gpus -1 -log_file /content/gdrive/"My Drive"/PreSumm/logs/abs_bert_cnndm
