@@ -50,7 +50,7 @@ python PreSumm/src/train.py -task abs -mode train -bert_data_path ~/o3/PreSumm/b
 
 ### Evaluate
 
-python train.py -task abs -mode validate -batch_size 3000 -test_batch_size 500 -bert_data_path BERT_DATA_PATH -log_file ../logs/val_abs_bert_cnndm -model_path MODEL_PATH -sep_optim true -use_interval true -visible_gpus 1 -max_pos 512 -max_length 200 -alpha 0.95 -min_length 50 -result_path ../logs/abs_bert_cnndm 
+python train.py -task abs -mode validate -batch_size 30 -test_batch_size 5 -bert_data_path ~/o3/PreSumm/bert_data/ -log_file ~/o3/PreSumm/logs/val_abs_bert_cnndm -model_path ~/o3/PreSumm/models -sep_optim true -use_interval true -visible_gpus 1 -max_pos 512 -max_length 10 -alpha 0.95 -min_length 5 -result_path ~/o3/PreSumm/logs/abs_bert_cnndm 
  
 * `-mode` can be {`validate, test`}, where `validate` will inspect the model directory and evaluate the model for each newly saved checkpoint, `test` need to be used with `-test_from`, indicating the checkpoint you want to use
 * `MODEL_PATH` is the directory of saved checkpoints
