@@ -8,9 +8,7 @@ conda activate p36
 
 **Requirements**: 
 
-#torch==1.1.0, pytorch_transformers tensorboardX multiprocess pyrouge
-
-* For colab modify to !pip
+#pyrouge preinstalled
 
 pip install multiprocess
 
