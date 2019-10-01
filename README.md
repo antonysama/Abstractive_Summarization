@@ -32,7 +32,7 @@ python PreSumm/src/preprocess.py  -mode format_to_lines  -raw_path ~/o3/PreSumm/
 ### 4.  To PyTorch 
 python PreSumm/src/preprocess.py -mode format_to_bert -raw_path ~/o3/PreSumm/json_data/ -save_path ~/o3/PreSumm/bert_data/  -lower -n_cpus 1 -log_file ~/o3/PreSumm/logs/preprocess.log 
 
-###  Train *For colab: see repo colab
+###  Train 
 **For the first run use debugging numbers. Thereafter, check the original repo for larger numbers**
 
 EXtractive model
