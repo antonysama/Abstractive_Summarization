@@ -18,8 +18,6 @@ pip install pytorch-transformers==1.1.0
 
 pip install torch==1.1.0 --user
 
-**Updates**: For encoding a text longer than 512 tokens, for example 800. Set max_pos to 800 during both preprocessing and training.
-
 ##  Preporcess
 ### 1.  Connecte to the pre-downloaded Stanford CoreNLP & test it
 
