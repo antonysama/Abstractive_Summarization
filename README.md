@@ -4,6 +4,8 @@
 
 **Set up and Requirements**: 
 
+mkdir o3 # 1st time
+
 cd o3
 
 conda activate p36
