@@ -27,6 +27,8 @@ pip install torch==1.1.0 --user
 ##  Preporcess
 ### 1.  Connecte to the pre-downloaded Stanford CoreNLP & test it
 
+Download  and set up (on o3/PrSumm) https://stanfordnlp.github.io/CoreNLP/
+
 export CLASSPATH=~/o3/stanford/stanford-corenlp-3.9.2.jar
 
 echo "Please tokenize this text." | java edu.stanford.nlp.process.PTBTokenizer
