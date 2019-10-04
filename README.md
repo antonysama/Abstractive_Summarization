@@ -43,6 +43,8 @@ python PreSumm/src/preprocess.py -mode format_to_bert -raw_path ~/o3/PreSumm/jso
 ###  Train 
 **For the first run use debugging numbers. Thereafter, check the original repo for larger numbers**
 
+Download and unzip pretrained model into PreSumm/models https://drive.google.com/uc?id=1-IKVCtc4Q-BdZpjXc4s70_fRsWnjtYLr&export=download
+
 EXtractive model
 
 python PreSumm/src/train.py -task ext -mode train -bert_data_path ~/o3/PreSumm/bert_data/ -ext_dropout 0.1 -model_path ~/o3/PreSumm/models -lr 2e-3 -visible_gpus -1 -report_every 10 -save_checkpoint_steps 10 -batch_size 8 -train_steps 30 -accum_count 2 -log_file ~/o3/PreSumm/logs/ext_bert_cnndm -use_interval true -warmup_steps 10 -max_pos 512
