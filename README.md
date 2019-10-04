@@ -3,6 +3,7 @@
 **Python 3.6**: 
 
 **Set up and Requirements**: 
+
 cd o3
 
 conda activate p36
