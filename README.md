@@ -29,7 +29,7 @@ pip install torch==1.1.0 --user
 
 Download  and set up (on o3/PrSumm) https://stanfordnlp.github.io/CoreNLP/
 
-export CLASSPATH=~/o3/stanford/stanford-corenlp-3.9.2.jar
+export CLASSPATH=~/o3/PreSumm/stanford/stanford-corenlp-3.9.2.jar
 
 echo "Please tokenize this text." | java edu.stanford.nlp.process.PTBTokenizer
 
