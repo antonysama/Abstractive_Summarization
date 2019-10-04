@@ -4,9 +4,11 @@
 
 **Set up and Requirements**: 
 
-mkdir o3 # 1st time
+# mkdir o3 # 1st time
 
 cd o3
+
+# git clone https://github.com/nlpyang/PreSumm.git # 1st time
 
 conda activate p36
 
