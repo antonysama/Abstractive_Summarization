@@ -64,7 +64,7 @@ python PreSumm/src/train.py -task abs -mode validate -test_all -batch_size 8 -te
 
 ##Gives folowing error:
 ##RuntimeError: Error(s) in loading state_dict for AbsSummarizer:
-##possible soln. : "That's because before you train your network, there's a file that hasn't been modified. This file is called config. py and is in the data folder. You should modify the num_class in line 15 or 31 based on the dataset format you use and the number of classes in your custom dataset."
+##possible soln.: https://github.com/amdegroot/ssd.pytorch/issues/342
 
 ### Test
 python PreSumm/src/train.py -task abs -mode test -test_from ~/o3/PreSumm/models/model_step_148000.pt -batch_size 16 -test_batch_size 2 -bert_data_path ~/o3/PreSumm/bert_data/cnndm -log_file ~/o3/PreSumm/logs/val_abs_bert_cnndm -sep_optim true -use_interval true -visible_gpus -1 -max_pos 512 -max_length 10 -alpha 0.95 -min_length 5 -result_path ~/o3/PreSumm/logs/abs_bert_cnndm 
