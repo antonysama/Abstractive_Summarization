@@ -14,7 +14,7 @@ git clone https://github.com/nlpyang/PreSumm.git # 1st time
 
 cd PreSumm
 
-#see pyrouge installation above
+#see pyrouge installation above, 1st time only
 
 pip install multiprocess
 
