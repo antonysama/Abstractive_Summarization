@@ -1,46 +1,35 @@
-# Samurai
-
 **Python 3.6**: 
 
-**Set up and Requirements**: 
+(When running on stand-alone computer, I run 'conda activate p36')
 
-mkdir o3 # 1st time
+**First (Setting Up)**
 
-cd o3
+- I have already cloned  'nlpyang/PreSumm' repo on colab( under google drive content>My Drive. So, it is always there). And, set up and pyrouge and other requirements (under this git below master in two .ipynb files )
 
-conda activate p36
+- I downloaded and unzipped both the both the stanford cuore nlp files into the'stanford' folder; and the preprocessed  (.pt) files onto  'bert_data.' Currently, I'm training on the pre processed files. So, I skip the second stage below
 
-git clone https://github.com/nlpyang/PreSumm.git # 1st time
+- To test Stanford CoreNLP :
 
-cd PreSumm
+  export CLASSPATH='/content/My Drive/PreSumm/stanford/stanford-corenlp-3.9.2.jar'
 
-#see pyrouge installation above, 1st time only
+  echo "Please tokenize this text." | java edu.stanford.nlp.process.PTBTokenizer
 
-pip install multiprocess
+**Second (Pre-processing)**
 
-pip install tensorboardX
+- For pre-processing at a later stage, I have saved the script on preprocessing.ipynb 
+ 
+(To enable GPU backend for your notebook. Runtime->Change runtime type->Hardware Accelerator->GPU. To cross-check whether the GPU is enabled you can run 'import tensorflow as tf' . Then, run 'tf.test.gpu_device_name()' .)
 
-pip install pytorch-transformers==1.1.0
-
-pip install torch==1.1.0 --user
-
-##  Preporcess
-### 1.  Connecte to the pre-downloaded Stanford CoreNLP & test it
-
-Download  and set up (on o3/PrSumm) https://stanfordnlp.github.io/CoreNLP/
-
-export CLASSPATH=~/o3/PreSumm/stanford/stanford-corenlp-3.9.2.jar
-
-echo "Please tokenize this text." | java edu.stanford.nlp.process.PTBTokenizer
-
-### 2.   Split sentences and tokenize
+###   Split sentences and tokenize
 python PreSumm/src/preprocess.py  -mode tokenize  -raw_path ~/o3/PreSumm/raw_data/ -save_path ~/o3/PreSumm/json_data/  -log_file ~/o3/PreSumm/logs/cnndm.log
-### 3.  To Simple Json 
+
+###  To Simple Json 
 python PreSumm/src/preprocess.py  -mode format_to_lines  -raw_path ~/o3/PreSumm/json_data/  -save_path ~/o3/PreSumm/json_data2/  -n_cpus 1  -use_bert_basic_tokenizer false  -map_path ~/o3/PreSumm/urls/  -log_file ~/o3/PreSumm/logs/cnndm.log
-### 4.  To PyTorch 
+
+###  To PyTorch 
 python PreSumm/src/preprocess.py -mode format_to_bert -raw_path ~/o3/PreSumm/json_data/ -save_path ~/o3/PreSumm/bert_data/  -lower -n_cpus 1 -log_file ~/o3/PreSumm/logs/preprocess.log 
 
-###  Train 
+**Third(Training)** 
 **For the first run use debugging numbers. Thereafter, check the original repo for larger numbers**
 
 Download and unzip pretrained model into PreSumm/models https://drive.google.com/uc?id=1-IKVCtc4Q-BdZpjXc4s70_fRsWnjtYLr&export=download
