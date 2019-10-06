@@ -22,8 +22,11 @@
 
 * For the first run use debugging numbers. thereafter, check the repo for larger numbers. To enable GPU on colab: Runtime->Change runtime type->Hardware Accelerator->GPU. To cross-check:
 
+
     #!/usr/bin/env bash
+    
     import tensorflow as tf
+    
     tf.test.gpu_device_name()   # you should get '/device:GPU:0'
 
 
