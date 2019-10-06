@@ -4,8 +4,9 @@
 
 **Set Up:**
 
-- On colab-google drive, I have already cloned the repo 'nlpyang/PreSumm' for use. I have imported all the  pyrouge. And, downloaded the (CNN/DM) pre-preprocessed files onto 'bert_data.' I downloaded  pretrained  model onto 'models'.  For reference, I placed the .ipynb files in master above. 
-- I downloaded the stanford-core nlp onto the 'stanford' folder. So, each time you run do the following: 
+- Use the username and password to aaccss the colab-google drive 'nlpyang/PreSumm' . The pre-preprocessed data files will be on 'bert_data' folder. And the pretrained  moel in 'models'. The stanford-nlp is in the 'stanford' folder. 
+
+- Install the requirements and pyrouge using the .ipynb files. Connect to stanford-nlp using:
 
     %%bash
   
@@ -13,17 +14,8 @@
   
     echo "Please tokenize this text." | java edu.stanford.nlp.process.PTBTokenizer
 
-- Install the requirements b:
 
-    %%bash
-    
-    pip install multiprocess
-    
-    pip install tensorboardX
-    
-    pip install pytorch-transformers==1.1.0
-    
-    pip install torch==1.1.0 
+
 
 **Skip the preprocessing** at this point.
  
