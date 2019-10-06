@@ -4,8 +4,7 @@
 
 **Set Up:**
 
-- On colab-google drive, I have already cloned the repo 'nlpyang/PreSumm' for use
-- I have imported all the requirements, including pyrouge. And, sownloaded the (CNN/DM) pre-preprocessed files onto 'bert_data.' I downloaded  pretrained  model onto 'models'.  For reference, I placed the .ipynb files in master above. 
+- On colab-google drive, I have already cloned the repo 'nlpyang/PreSumm' for use. I have imported all the  pyrouge. And, downloaded the (CNN/DM) pre-preprocessed files onto 'bert_data.' I downloaded  pretrained  model onto 'models'.  For reference, I placed the .ipynb files in master above. 
 - I downloaded the stanford-core nlp onto the 'stanford' folder. So, each time you run do the following: 
 
     %%bash
@@ -14,6 +13,7 @@
   
     echo "Please tokenize this text." | java edu.stanford.nlp.process.PTBTokenizer
 
+- Install the requirements by modifying the respective .ipnyb file
 
 **Skip the preprocessing** at this point.
  
@@ -32,7 +32,9 @@
 
 EXtractive model
 
-!python PreSumm/src/train.py -task ext -mode train -bert_data_path 'content/content/My Drive/PreSumm/bert_data/cnndm' -ext_dropout 0.1 -model_path 'content/content/My Drive/PreSumm/models' -lr 2e-3 -visible_gpus -1 -report_every 10 -save_checkpoint_steps 10 -batch_size 8 -train_steps 30 -accum_count 2 -log_file 'content/content/My Drive/PreSumm/logs/ext_bert_cnndm' -use_interval true -warmup_steps 10 -max_pos 512
+#!/bin/python
+
+!python '/content/drive/My Drive/PreSumm/src/train.py' -task ext -mode train -bert_data_path 'content/drive/My Drive/PreSumm/bert_data/cnndm' -ext_dropout 0.1 -model_path 'content/drive/My Drive/PreSumm/models' -lr 2e-3 -visible_gpus -1 -report_every 10 -save_checkpoint_steps 10 -batch_size 8 -train_steps 30 -accum_count 2 -log_file 'content/drive/My Drive/PreSumm/logs/ext_bert_cnndm' -use_interval true -warmup_steps 10 -max_pos 512
 
 ABSstractive model
 
