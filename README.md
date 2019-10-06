@@ -4,9 +4,10 @@
 
 **1-Set Up**
 
-- I have cloned 'nlpyang/PreSumm' on colab (under google). And, I set up pyrouge and other requirements. I downloaded and unzipped both the both the stanford cuore nlp files into the'stanford' folder. Finally, I downloaded the preprocessed  (.pt) files onto  'bert_data.' and the pretrained model under thr 'modeld' folder. 
-
-- At this point, get Stanford CoreNLP started and skip to stage 3.
+Completed the following:
+- On colab google drive, I cloned 'nlpyang/PreSumm' 
+- I imported and other requirements. Doewnloaded the CNN/DM pre-preprocessed  (.pt) files onto  'bert_data.' Downloaded the pretrained exab model under the 'models' folder.  The .ipynb files for these operations are in master above. 
+- I downloaded the stanford cuore nlp files into the'stanford' folder. To get it started do the foll: 
 
   %%bash
   export CLASSPATH='/content/content/My Drive/PreSumm/stanford/stanford-corenlp-3.9.2.jar'
@@ -14,12 +15,11 @@
 
 **2-Pre-process**
 
-- At this point, I skip preprocessing. 
+- At this point, skip preprocessing. 
  
 **3-Train, Val, and Test** 
 **For the first run use debugging numbers. Thereafter, check the original repo for larger numbers**
 
-Download and unzip pretrained model into PreSumm/models https://drive.google.com/uc?id=1-IKVCtc4Q-BdZpjXc4s70_fRsWnjtYLr&export=download
 
 EXtractive model
 
