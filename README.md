@@ -2,11 +2,11 @@
 
 (Use colab use notebook for python3. On stand-alone computer, I run 'conda activate p36')
 
-**Set Up**
+**Set Up:**
 
-- On colab google drive, I have cloned 'nlpyang/PreSumm' 
-- I imported all requirements, including pyrouge. Downloaded the CNN/DM pre-preprocessed files onto 'bert_data.' Downloaded  pretrained  model onto 'models'.  The python files for these operations are in master above as .ipynb files. 
-- I downloaded the stanford-core nlp onto the 'stanford' folder. Each time you geet started do the following: 
+- On colab-google drive, I have already cloned the repo 'nlpyang/PreSumm' for use
+- I have imported all the requirements, including pyrouge. And, sownloaded the (CNN/DM) pre-preprocessed files onto 'bert_data.' I downloaded  pretrained  model onto 'models'.  For reference, I placed the .ipynb files in master above. 
+- I downloaded the stanford-core nlp onto the 'stanford' folder. So, each time you run do the following: 
 
     %%bash
   
@@ -14,13 +14,18 @@
   
     echo "Please tokenize this text." | java edu.stanford.nlp.process.PTBTokenizer
 
-**At this point, skip the preprocessing** 
+
+**Skip the preprocessing** at this point.
  
-**Train, Evaluate and Test** 
+ 
+**Train, Evaluate and Test:** 
 
-* For the first run use debugging numbers. Thereafter, check the original repo for larger numbers *
+* For the first run use debugging numbers. thereafter, check the repo for larger numbers. To enable GPU on colab: Runtime->Change runtime type->Hardware Accelerator->GPU. To cross-check:
 
-* To enable GPU backend for your notebook. Runtime->Change runtime type->Hardware Accelerator->GPU. To cross-check whether the GPU is enabled you can run 'import tensorflow as tf' . Then, run 'tf.test.gpu_device_name()' .
+    #!/usr/bin/env bash
+    import tensorflow as tf
+    tf.test.gpu_device_name()   # you should get '/device:GPU:0'
+
 
 EXtractive model
 
