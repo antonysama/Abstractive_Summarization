@@ -16,9 +16,13 @@
 - Install the requirements b:
 
     %%bash
+    
     pip install multiprocess
+    
     pip install tensorboardX
+    
     pip install pytorch-transformers==1.1.0
+    
     pip install torch==1.1.0 
 
 **Skip the preprocessing** at this point.
