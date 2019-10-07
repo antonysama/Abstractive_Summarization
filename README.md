@@ -1,8 +1,8 @@
-**colab notebook for python3 and GPU:**
+**Instructions for using the colab notebook with python3 and GPU:**
 
 (On stand-alone computer, run 'conda activate p36')
 
-*  Open google colab (user ant26635 :  Winter2019)
+*  Open google colab 
 
 *  To enable GPU : Runtime->Change runtime type-> Hardware Accelerator-> GPU. Cross-check:
 
@@ -16,7 +16,7 @@
 
 **Set Up:**
 
--     First, upload notebook 'pyrouge_install.ipynb' and 'run all' . Second, mount google drive with the account: Ant Sam (The pre-preprocessed data files will be on folder 'bert_data' . The pretrained  model on folder 'models'. Stanford-nlp files on folder 'stanford') 
+-     First, upload notebook 'pyrouge_install.ipynb' and 'run all' . Second, mount google drive with the account, Ant Sam: u. ant26635 : p. Winter2019) (The pre-preprocessed data files will be on folder 'bert_data' . The pretrained  model on folder 'models'. Stanford-nlp files on folder 'stanford') 
 
 - Third. install requirements: 
 
