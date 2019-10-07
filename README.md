@@ -1,10 +1,21 @@
-**Python 3.6**: 
+**colab notebook for python3 and GPU **: 
 
-(Use colab use notebook for python3. On stand-alone computer, I run 'conda activate p36')
+(On stand-alone computer, I run 'conda activate p36')
+
+*  Open colab (user ant26635  Winter2019)
+*  To enable GPU : Runtime->Change runtime type->Hardware Accelerator->GPU. To cross-check:
+
+
+    #!/usr/bin/env bash
+    
+    import tensorflow as tf
+    
+    tf.test.gpu_device_name()   # you should get '/device:GPU:0'
+
 
 **Set Up:**
 
--    Open colab. First, upload notebook 'pyrouge_install.ipynb' and  select'run all'. Second, mount my google drive. The pre-preprocessed data files will be on 'bert_data' folder, and the pretrained  model in 'models'. The stanford-nlp is in the 'stanford' folder. 
+-     First, upload notebook 'pyrouge_install.ipynb' and  select'run all'. Second, mount google drive (Ant Sam): the pre-preprocessed data files will be on 'bert_data' folder, and the pretrained  model in 'models'. The stanford-nlp is in the 'stanford' folder. 
 
 - Install the requirements: 
 
@@ -33,21 +44,14 @@
  
 **Train, Evaluate and Test:** 
 
-* For the first run use debugging numbers. thereafter, check the repo for larger numbers. To enable GPU on colab: Runtime->Change runtime type->Hardware Accelerator->GPU. To cross-check:
-
-
-    #!/usr/bin/env bash
-    
-    import tensorflow as tf
-    
-    tf.test.gpu_device_name()   # you should get '/device:GPU:0'
+*  For the first run use debugging numbers. thereafter, check the repo for larger numbers.
 
 
 Run the extractive model, rememberung ALL lines:
 
 #!/bin/python
 
-!python '/content/drive/My Drive/PreSumm/src/train.py' -task ext -mode train -bert_data_path 'content/drive/My Drive/PreSumm/bert_data/cnndm' -ext_dropout 0.1 -model_path 'content/drive/My Drive/PreSumm/models' -lr 2e-3 -visible_gpus -1 -report_every 10 -save_checkpoint_steps 10 -batch_size 8 -train_steps 30 -accum_count 2 -log_file 'logs/ext_bert_cnndm' -use_interval true -warmup_steps 10 -max_pos 512
+!python '/content/drive/My Drive/PreSumm/src/train.py' -task ext -mode train -bert_data_path 'content/drive/My Drive/PreSumm/bert_data/cnndm' -ext_dropout 0.1 -model_path 'content/drive/My Drive/PreSumm/models' -lr 2e-3 -visible_gpus -1 -report_every 10 -save_checkpoint_steps 10 -batch_size 8 -train_steps 30 -accum_count 2 -log_file 'drive/My Drive/PreSumm/logs/ext_bert_cnndm' -use_interval true -warmup_steps 10 -max_pos 512
 
 ABSstractive model
 
