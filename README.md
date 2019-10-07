@@ -4,17 +4,24 @@
 
 **Set Up:**
 
--    Open colab and upload notebook 'pyrouge_install.ipynb' from here and  select'run all'. Mount google drive. The pre-preprocessed data files will be on 'bert_data' folder. And the pretrained  moel in 'models'. The stanford-nlp is in the 'stanford' folder. 
+-    Open colab. First, upload notebook 'pyrouge_install.ipynb' and  select'run all'. Second, mount my google drive. The pre-preprocessed data files will be on 'bert_data' folder, and the pretrained  model in 'models'. The stanford-nlp is in the 'stanford' folder. 
 
 - Install the requirements: 
 
+    !pip install multiprocess
+    
+    !pip install tensorboardX
+    
+    !pip install pytorch-transformers==1.1.0
+        
+    !pip install torch==1.1.0
 
 
-- Connect to stanford-nlp using:
+- Check the path and connect to stanford-nlp using these three lines:
 
     %%bash
   
-    export CLASSPATH='/content/content/My Drive/PreSumm/stanford/stanford-corenlp-3.9.2.jar'
+    export CLASSPATH='/content/drive/My Drive/PreSumm/stanford/stanford-corenlp-3.9.2.jar'
   
     echo "Please tokenize this text." | java edu.stanford.nlp.process.PTBTokenizer
 
@@ -36,11 +43,11 @@
     tf.test.gpu_device_name()   # you should get '/device:GPU:0'
 
 
-EXtractive model
+Run the extractive model, rememberung ALL lines:
 
 #!/bin/python
 
-!python '/content/drive/My Drive/PreSumm/src/train.py' -task ext -mode train -bert_data_path 'content/drive/My Drive/PreSumm/bert_data/cnndm' -ext_dropout 0.1 -model_path 'content/drive/My Drive/PreSumm/models' -lr 2e-3 -visible_gpus -1 -report_every 10 -save_checkpoint_steps 10 -batch_size 8 -train_steps 30 -accum_count 2 -log_file 'content/drive/My Drive/PreSumm/logs/ext_bert_cnndm' -use_interval true -warmup_steps 10 -max_pos 512
+!python '/content/drive/My Drive/PreSumm/src/train.py' -task ext -mode train -bert_data_path 'content/drive/My Drive/PreSumm/bert_data/cnndm' -ext_dropout 0.1 -model_path 'content/drive/My Drive/PreSumm/models' -lr 2e-3 -visible_gpus -1 -report_every 10 -save_checkpoint_steps 10 -batch_size 8 -train_steps 30 -accum_count 2 -log_file 'logs/ext_bert_cnndm' -use_interval true -warmup_steps 10 -max_pos 512
 
 ABSstractive model
 
