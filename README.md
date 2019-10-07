@@ -3,7 +3,7 @@
 Do not 'mount' google drive untill you install the dependnecy in step 2 .  ( Under google 'drive' > 'My Drive' is the 'PreSumm' clone. It's the oroginal repo. Under 'bert_data' is pre-preprocessed data. Under 'models' , a pretrained  model. Under 'stanford', the  stanford-core-nlp files. )
 
 
-**STEP 1 - Open colab .**  Use a/c & p/w sent separately . 
+Step **1 - Open colab .**  Use a/c & p/w sent separately . 
 
 Training numbers are small for debugging. But, if one needs GPU : Runtime -> Change runtime type -> Hardware Accelerator-> GPU. 
 
@@ -16,13 +16,10 @@ Training numbers are small for debugging. But, if one needs GPU : Runtime -> Cha
     tf.test.gpu_device_name()   # you should get '/device:GPU:0'
 
 
-**Set Up .**  (steps 2 through 4)
+Step **2 - Upload pyrouge .**  It's the ' .ipynb' sent separately. File >  "upload notebook" . Then, Runtime > "run all" . When successfull it says "ran ~11 tests in ~5s."   Mount google drive (use a/c & p/w sent separately) 
 
 
-**STEP 2 - Upload pyrouge .**  It's the ' .ipynb' sent separately. File >  "upload notebook" . Then, Runtime > "run all" . When successfull it says "ran ~11 tests in ~5s."   Mount google drive (use a/c & p/w sent separately) 
-
-
-**STEP 3 - Requirements .** 
+Step **3 - Requirements .** 
 
     !pip install multiprocess
     
@@ -33,7 +30,7 @@ Training numbers are small for debugging. But, if one needs GPU : Runtime -> Cha
     !pip install torch==1.1.0
 
 
-**STEP 4 - stanford-core-nlp .**   Use the bash. Edit the path if needed .
+Step **4 - stanford-core-nlp .**   Use the bash. Edit the path if needed .
 
     %%bash
   
@@ -45,7 +42,7 @@ Training numbers are small for debugging. But, if one needs GPU : Runtime -> Cha
 Skip preprocessing, we're running on pretrained data.
  
  
-**STEP 5 - Train .**  Use  the  shebang .
+Step **5 - Train .**  Use  the  shebang .
 
 
 #!/bin/python
