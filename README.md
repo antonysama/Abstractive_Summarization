@@ -1,6 +1,6 @@
 **Steps to run PreSumm on Colab & Drive**   (python 3) 
 
-**Do not mount google drive untill after installing the dependnecy on STEP 2** Under 'drive' > 'My Drive' you will find a clone of the oroginal repo (PreSumm). Under 'bert_data' is pre-preprocessed data. Under 'models' , pretrained  model. Under 'stanford', pre-loaded stanford-core-nlp files. 
+**Do not mount google drive untill after installing the dependnecy on STEP 2 :**  Under 'drive' > 'My Drive' you will find a clone of 'PreSumm' the oroginal repo. Under 'bert_data' is pre-preprocessed data. Under 'models' , pretrained  model. Under 'stanford', pre-loaded stanford-core-nlp files. 
 
 
 **STEP 1 - Open colab** using the account id & p/w sent by messenger. 
