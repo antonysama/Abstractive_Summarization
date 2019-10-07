@@ -1,13 +1,13 @@
 **Steps to run PreSumm on Colab & Drive**   (python 3) 
 
-Do not 'mount' google drive untill you install the dependnecy inn STEP 2.  ( Under google 'drive' > 'My Drive' is the 'PreSumm' cole. It's the oroginal repo. Under 'bert_data' is pre-preprocessed data. Under 'models' , a pretrained  model. Under 'stanford', the  stanford-core-nlp files. )
+Do not 'mount' google drive untill you install the dependnecy in STEP 2.  ( Under google 'drive' > 'My Drive' is the 'PreSumm' clone. It's the oroginal repo. Under 'bert_data' is pre-preprocessed data. Under 'models' , a pretrained  model. Under 'stanford', the  stanford-core-nlp files. )
 
 
-**STEP 1 - Open colab** using the account id & p/w sent by messenger. 
+**STEP 1 - Open colab .**  Use a/c & p/w sent separately . 
 
-Training numbers are small for debugging. Butm if colab GPU is needed : Runtime -> Change runtime type -> Hardware Accelerator-> GPU. 
+Training numbers are small for debugging. But, if one needs GPU : Runtime -> Change runtime type -> Hardware Accelerator-> GPU. 
 
-    To cross-check that colab GPU is running:
+    To cross-check GPU :
     
     #!/usr/bin/env bash
     
@@ -16,13 +16,13 @@ Training numbers are small for debugging. Butm if colab GPU is needed : Runtime 
     tf.test.gpu_device_name()   # you should get '/device:GPU:0'
 
 
-**The Set Up :** (STEPS 2-4)
+**Set Up .**  (steps 2 through 4)
 
 
-**STEP 2 - Upload pyrouge**  It's the ' .ipynb' sent separately. File >  "upload notebook" . Then, Runtime > "run all" . When successfull it says "ran ~11 tests in ~5s."   After that, mount google drive (useing user & pw sent separately) 
+**STEP 2 - Upload pyrouge .**  It's the ' .ipynb' sent separately. File >  "upload notebook" . Then, Runtime > "run all" . When successfull it says "ran ~11 tests in ~5s."   Mount google drive (use a/c & p/w sent separately) 
 
 
-**STEP 3 - Requirements:** 
+**STEP 3 - Requirements .** 
 
     !pip install multiprocess
     
@@ -33,7 +33,7 @@ Training numbers are small for debugging. Butm if colab GPU is needed : Runtime 
     !pip install torch==1.1.0
 
 
-**STEP 4 - stanford-core-nlp:** - Use the bash. Edit the path if needed 
+**STEP 4 - stanford-core-nlp .**   Use the bash. Edit the path if needed .
 
     %%bash
   
@@ -42,12 +42,11 @@ Training numbers are small for debugging. Butm if colab GPU is needed : Runtime 
     echo "Please tokenize this text." | java edu.stanford.nlp.process.PTBTokenizer
 
 
-Skip the preprocessing, as we're running on pretrained .
+Skip preprocessing, we're running on pretrained data.
  
  
-**STEP 5 - Train**  Use  the below shebang (#!...) 
+**STEP 5 - Train .**  Use  the  shebang (#!...) 
 
-EXTractive model
 
 #!/bin/python
 
