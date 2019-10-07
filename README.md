@@ -1,4 +1,4 @@
-**Steps to un PreSumm on Colab & Drive with dependencies**(python 3) 
+**Steps to un PreSumm on Colab & Drive** with dependencies (python 3) 
 
 
 (Under 'My Drive' you will find a clone of the oroginal repo (PreSumm). Under 'bert_data' is pre-preprocessed data. Under 'models' a pretrained  model. Under 'stanford' pre-loaded stanford-core-nlp files. 
@@ -17,10 +17,10 @@ Training numbers are small, for debugging. If GPU is needed : Runtime -> Change 
     tf.test.gpu_device_name()   # you should get '/device:GPU:0'
 
 
-**Set Up:**
+**Set Up :**
 
 
-**STEP 2 - Upload the dependency pyrouge**.ipynb. It was sent separately. Run "upload notebook" . Then, "run all" . Then, mount google drive (Ant Sam)
+**STEP 2 - Upload the dependency pyrouge** .ipynb , which was sent separately . Run "upload notebook" . Then, "run all" . Then, mount google drive (Ant Sam)
 
 
 **STEP 3 - Install requirements:** 
@@ -46,7 +46,7 @@ Training numbers are small, for debugging. If GPU is needed : Runtime -> Change 
 Skip the preprocessing,  we're running on pretrained .
  
  
-**STEP 5 - Train** on EXTractive model :-- remember to use  the following shebang (#!...) 
+**STEP 5 - Train** on EXTractive model ,  using  the below shebang (#!...) 
 
 EXTractive model
 
