@@ -45,7 +45,7 @@ Training numbers are small for debugging. But, if one needs GPU : Runtime -> Cha
 Skip preprocessing, we're running on pretrained data.
  
  
-**STEP 5 - Train .**  Use  the  shebang (#!...) 
+**STEP 5 - Train .**  Use  the  shebang .
 
 
 #!/bin/python
