@@ -4,7 +4,7 @@
 (Under 'My Drive' you will find a clone of the oroginal repo (PreSumm). Under 'bert_data' is pre-preprocessed data. Under 'models' a pretrained  model. Under  'stanford' pre-loaded stanford-core-nlp files.) 
 
 
-**STEP 1 - Open colab using the account id & p/w sent. Do not mount google drive untill you finish installing the dependnecy on step 2. To enable GPU : Runtime -> Change runtime type -> Hardware Accelerator-> GPU. **
+**STEP 1 - Open colab using the account id & p/w sent. Do not mount google drive untill installing of the dependnecy on STEP 2. If GPU is needed : Runtime -> Change runtime type -> Hardware Accelerator-> GPU. **
 
     To cross-check GPU run:
     
@@ -18,7 +18,7 @@
 **Set Up:**
 
 
-**STEP 2 - Upload the dependency I sent 'pyrouge_install.ipynb', by running on colab "upload notebook" . Then, "run all" . After that, mount google drive. 
+**STEP 2 - Upload the dependency that was separately sent 'pyrouge_install.ipynb', by running "upload notebook" . Then, "run all" . Now, mount google drive. 
 
 
 **STEP 3 - Install requirements: 
@@ -41,12 +41,12 @@
     echo "Please tokenize this text." | java edu.stanford.nlp.process.PTBTokenizer
 
 
-**Skip the preprocessing** , as we're running on pretrained .
+**Skip the preprocessing** ,  we're running on pretrained .
  
  
 **Train, Evaluate and Test:** 
 
-*  The parameters are debugging numbers,. 
+*  Model parameters are debugging only, so GPU is not needed. 
 
 
 **STEP 5 - Train on EXTractive model -- remember to use  the following shebang (#!...):
