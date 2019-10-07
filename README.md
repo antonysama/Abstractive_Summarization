@@ -43,7 +43,7 @@ Training numbers are small, for debugging. If GPU is needed : Runtime -> Change 
     echo "Please tokenize this text." | java edu.stanford.nlp.process.PTBTokenizer
 
 
-**Skip the preprocessing** ,  we're running on pretrained .
+Skip the preprocessing,  we're running on pretrained .
  
  
 **STEP 5 - Train** on EXTractive model :-- remember to use  the following shebang (#!...) 
