@@ -1,9 +1,10 @@
-**colab notebook for python3 and GPU **: 
+**colab notebook for python3 and GPU:**
 
-(On stand-alone computer, I run 'conda activate p36')
+(On stand-alone computer, run 'conda activate p36')
 
-*  Open colab (user ant26635  Winter2019)
-*  To enable GPU : Runtime->Change runtime type->Hardware Accelerator->GPU. To cross-check:
+*  Open google colab (user ant26635 :  Winter2019)
+
+*  To enable GPU : Runtime->Change runtime type-> Hardware Accelerator-> GPU. Cross-check:
 
 
     #!/usr/bin/env bash
@@ -15,9 +16,9 @@
 
 **Set Up:**
 
--     First, upload notebook 'pyrouge_install.ipynb' and  select'run all'. Second, mount google drive (Ant Sam): the pre-preprocessed data files will be on 'bert_data' folder, and the pretrained  model in 'models'. The stanford-nlp is in the 'stanford' folder. 
+-     First, upload notebook 'pyrouge_install.ipynb' and 'run all' . Second, mount google drive with the account: Ant Sam (The pre-preprocessed data files will be on folder 'bert_data' . The pretrained  model on folder 'models'. Stanford-nlp files on folder 'stanford') 
 
-- Install the requirements: 
+- Third. install requirements: 
 
     !pip install multiprocess
     
@@ -28,7 +29,7 @@
     !pip install torch==1.1.0
 
 
-- Check the path and connect to stanford-nlp using these three lines:
+- Fourth. connect to stanford-nlp (Check the path) :
 
     %%bash
   
@@ -44,7 +45,7 @@
  
 **Train, Evaluate and Test:** 
 
-*  For the first run use debugging numbers. thereafter, check the repo for larger numbers.
+*  For the first run use debugging numbers. 
 
 
 Run the extractive model, rememberung ALL lines:
