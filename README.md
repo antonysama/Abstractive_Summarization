@@ -4,9 +4,13 @@
 
 **Set Up:**
 
-- Use the username and password to aaccss the colab-google drive 'nlpyang/PreSumm' . The pre-preprocessed data files will be on 'bert_data' folder. And the pretrained  moel in 'models'. The stanford-nlp is in the 'stanford' folder. 
+-    Open colab and upload notebook 'pyrouge_install.ipynb' from here and  select'run all'. Mount google drive. The pre-preprocessed data files will be on 'bert_data' folder. And the pretrained  moel in 'models'. The stanford-nlp is in the 'stanford' folder. 
 
-- Install the requirements and pyrouge using the .ipynb files. Connect to stanford-nlp using:
+- Install the requirements: 
+
+
+
+- Connect to stanford-nlp using:
 
     %%bash
   
