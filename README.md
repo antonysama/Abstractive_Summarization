@@ -20,7 +20,7 @@ Training numbers are small, for debugging. If GPU is needed : Runtime -> Change 
 **Set Up:**
 
 
-**STEP 2 - Upload the dependency pyrouge**.ipynb. It was sent separately. Run "upload notebook" . Then, "run all" . Then, mount google drive**(Ant Sam)
+**STEP 2 - Upload the dependency pyrouge**.ipynb. It was sent separately. Run "upload notebook" . Then, "run all" . Then, mount google drive (Ant Sam)
 
 
 **STEP 3 - Install requirements:** 
