@@ -1,12 +1,12 @@
-**Steps to un PreSumm on Colab & Drive with dependencies (python 3) :**
+**Steps to un PreSumm on Colab & Drive with dependencies**(python 3) 
 
 
-(Under 'My Drive' you will find a clone of the oroginal repo (PreSumm). Under 'bert_data' is pre-preprocessed data. Under 'models' a pretrained  model. Under  'stanford' pre-loaded stanford-core-nlp files.) 
+(Under 'My Drive' you will find a clone of the oroginal repo (PreSumm). Under 'bert_data' is pre-preprocessed data. Under 'models' a pretrained  model. Under 'stanford' pre-loaded stanford-core-nlp files. 
 
 
-**STEP 1 - Open colab using the account id & p/w sent. Do not mount google drive untill installing of the dependnecy on STEP 2**
+**STEP 1 - Open colab using the account id & p/w sent by messenger. Do not mount google drive untill after installing the dependnecy on STEP 2**
 
-Training numbers are small, for debugging. But, if GPU is needed : Runtime -> Change runtime type -> Hardware Accelerator-> GPU. 
+Training numbers are small, for debugging. If GPU is needed : Runtime -> Change runtime type -> Hardware Accelerator-> GPU. 
 
     To cross-check GPU run:
     
@@ -20,7 +20,7 @@ Training numbers are small, for debugging. But, if GPU is needed : Runtime -> Ch
 **Set Up:**
 
 
-**STEP 2 - Upload the dependency that was separately sent 'pyrouge_install.ipynb', by running "upload notebook" . Then, "run all" . Then, mount google drive**(Ant Sam)
+**STEP 2 - Upload the dependency sent separately** 'pyrouge_install.ipynb', by running "upload notebook" . Then, "run all" . Then, mount google drive**(Ant Sam)
 
 
 **STEP 3 - Install requirements:** 
@@ -34,7 +34,7 @@ Training numbers are small, for debugging. But, if GPU is needed : Runtime -> Ch
     !pip install torch==1.1.0
 
 
-**STEP 4 - Connect to stanford-nlp -- by editing the path if needed :**
+**STEP 4 - Connect to stanford-nlp:** -- by editing the path if needed 
 
     %%bash
   
@@ -46,10 +46,10 @@ Training numbers are small, for debugging. But, if GPU is needed : Runtime -> Ch
 **Skip the preprocessing** ,  we're running on pretrained .
  
  
-**Train, Evaluate and Test:** 
+**Train** 
 
 
-**STEP 5 - Train on EXTractive model -- remember to use  the following shebang (#!...) :**
+**STEP 5 - Train on EXTractive model :** -- remember to use  the following shebang (#!...) 
 
 EXTractive model
 
