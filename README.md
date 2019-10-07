@@ -20,10 +20,10 @@ Training numbers are small, for debugging. But, if GPU is needed : Runtime -> Ch
 **Set Up:**
 
 
-**STEP 2 - Upload the dependency that was separately sent 'pyrouge_install.ipynb', by running "upload notebook" . Then, "run all" . Now, mount google drive. 
+**STEP 2 - Upload the dependency that was separately sent 'pyrouge_install.ipynb', by running "upload notebook" . Then, "run all" . Now, mount google drive.** 
 
 
-**STEP 3 - Install requirements: 
+**STEP 3 - Install requirements:** 
 
     !pip install multiprocess
     
@@ -34,7 +34,7 @@ Training numbers are small, for debugging. But, if GPU is needed : Runtime -> Ch
     !pip install torch==1.1.0
 
 
-**STEP 4 - Connect to stanford-nlp -- by editing the path if needed :
+**STEP 4 - Connect to stanford-nlp -- by editing the path if needed :**
 
     %%bash
   
@@ -49,7 +49,7 @@ Training numbers are small, for debugging. But, if GPU is needed : Runtime -> Ch
 **Train, Evaluate and Test:** 
 
 
-**STEP 5 - Train on EXTractive model -- remember to use  the following shebang (#!...):
+**STEP 5 - Train on EXTractive model -- remember to use  the following shebang (#!...) :**
 
 EXTractive model
 
