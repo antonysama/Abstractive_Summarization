@@ -1,11 +1,12 @@
-**Instructions for using the colab notebook with python3 and GPU:**
+**Instructions for running PreSumm program on Colab & Drive. With GPU and dependencies (on python 3) :**
 
-(On stand-alone computer, run 'conda activate p36')
+(Under 'My Drive' you will find a clone of the oroginal repo (PreSumm). Under 'bert_data' is pre-preprocessed data. Under 'models' a pretrained  model. Under  'stanford' pre-loaded stanford-core-nlp files.) 
 
-*  Open google colab. To enable GPU : Runtime->Change runtime type-> Hardware Accelerator-> GPU. 
 
-    To cross-check:
+**STEP 1 - Open colab using the account id & p/w sent. Do not mount google drive untill you finish installing the dependnecy on step 2. To enable GPU : Runtime -> Change runtime type -> Hardware Accelerator-> GPU. **
 
+    To cross-check GPU run:
+    
     #!/usr/bin/env bash
     
     import tensorflow as tf
@@ -15,9 +16,11 @@
 
 **Set Up:**
 
-- First, upload notebook 'pyrouge_install.ipynb' and 'run all' . Mount google drive with the account, Ant Sam: u. ant26635 : p. Winter2019) (The pre-preprocessed data files will be on folder 'bert_data' . The pretrained  model on folder 'models'. Stanford-nlp files on folder 'stanford') 
 
-- Third. install requirements: 
+**STEP 2 - Upload the dependency I sent 'pyrouge_install.ipynb', by running on colab "upload notebook" . Then, "run all" . After that, mount google drive. 
+
+
+**STEP 3 - Install requirements: 
 
     !pip install multiprocess
     
@@ -28,7 +31,7 @@
     !pip install torch==1.1.0
 
 
-- Fourth. connect to stanford-nlp (Check the path) :
+**STEP 4 - Connect to stanford-nlp -- by editing the path if needed :
 
     %%bash
   
@@ -37,17 +40,16 @@
     echo "Please tokenize this text." | java edu.stanford.nlp.process.PTBTokenizer
 
 
-
-
-**Skip the preprocessing** at this point.
+**Skip the preprocessing** , as we're running on pretrained .
  
  
 **Train, Evaluate and Test:** 
 
-*  For the first run use debugging numbers. 
+*  The parameters are debugging numbers,. 
 
+**STEP 5 - Train on EXTractive model -- remember to use  the following shebang (#!...):
 
-Run the extractive model, rememberung ALL lines:
+EXTractive model
 
 #!/bin/python
 
@@ -61,21 +63,6 @@ EXABS model
 
 python PreSumm/src/train.py  -task abs -mode train -bert_data_path ~/o3/PreSumm/bert_data/cnndm -dec_dropout 0.2  -model_path ~/o3/PreSumm/models -sep_optim true -lr_bert 0.002 -lr_dec 0.2 -save_checkpoint_steps 10 -batch_size 8 -train_steps 30 -report_every 10 -accum_count 2 -use_bert_emb true -use_interval true -warmup_steps_bert 5 -warmup_steps_dec 2 -max_pos 512 -visible_gpus -1 -log_file ~/o3/PreSumm/logs/abs_bert_cnndm  -load_from_extractive ~/o3/PreSumm/models/model_step_30.pt **
 
-**load the saved '.pt' checkpoint of the extractive model.
 
-### Evaluate
-python PreSumm/src/train.py -task abs -mode validate -test_all -batch_size 8 -test_batch_size 2 -bert_data_path ~/o3/PreSumm/bert_data/cnndm -log_file ~/o3/PreSumm/logs/val_abs_bert_cnndm -model_path ~/o3/PreSumm/models -sep_optim true -use_interval true -visible_gpus -1 -max_pos 512 -max_length 10 -alpha 0.95 -min_length 5 -result_path ~/o3/PreSumm/logs/abs_bert_cnndm
-
-##Gives folowing error:
-##RuntimeError: Error(s) in loading state_dict for AbsSummarizer:
-##solns: https://github.com/amdegroot/ssd.pytorch/issues/342 & https://discuss.pytorch.org/t/how-to-load-part-of-pre-trained-model/1113/8
-
-### Test
-python PreSumm/src/train.py -task abs -mode test -test_from ~/o3/PreSumm/models/model_step_148000.pt -batch_size 16 -test_batch_size 2 -bert_data_path ~/o3/PreSumm/bert_data/cnndm -log_file ~/o3/PreSumm/logs/val_abs_bert_cnndm -sep_optim true -use_interval true -visible_gpus -1 -max_pos 512 -max_length 10 -alpha 0.95 -min_length 5 -result_path ~/o3/PreSumm/logs/abs_bert_cnndm 
-
-
-* `-mode` can be {`validate, test`}, where `validate` will inspect the model directory and evaluate the model for each newly saved checkpoint, `test` need to be used with `-test_from`, indicating the checkpoint you want to use
-* `MODEL_PATH` is the directory of saved checkpoints
-* use `-mode valiadte` with `-test_all`, the system will load all saved checkpoints and select the top ones to generate summaries (this will take a while)
 
 
