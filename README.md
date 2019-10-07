@@ -20,7 +20,7 @@ Training numbers are small, for debugging. But, if GPU is needed : Runtime -> Ch
 **Set Up:**
 
 
-**STEP 2 - Upload the dependency that was separately sent 'pyrouge_install.ipynb', by running "upload notebook" . Then, "run all" . Now, mount google drive.** 
+**STEP 2 - Upload the dependency that was separately sent 'pyrouge_install.ipynb', by running "upload notebook" . Then, "run all" . Then, mount google drive**(Ant Sam)
 
 
 **STEP 3 - Install requirements:** 
