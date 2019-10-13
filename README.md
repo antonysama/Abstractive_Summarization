@@ -21,13 +21,13 @@ Step **2 - Upload pyrouge .**  It's the ' .ipynb' sent separately. File >  "uplo
 
 Step **3 - Requirements .** 
 
-    !pip install multiprocess
+    pip install multiprocess
     
-    !pip install tensorboardX
+    pip install tensorboardX
     
-    !pip install pytorch-transformers==1.1.0
+    pip install pytorch-transformers==1.1.0
         
-    !pip install torch==1.1.0
+    pip install torch==1.1.0
 
 
 Step **4 - stanford-core-nlp .**   Use the bash. Edit the path if needed .
