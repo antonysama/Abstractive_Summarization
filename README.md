@@ -52,7 +52,14 @@ Step **5 - Train .**  Use  the  shebang .
 
 python ~/o3/PreSumm/src/train.py -task ext -mode train -bert_data_path ~/o3/PreSumm/bert_data/cnndm -ext_dropout 0.1 -model_path ~/o3/PreSumm/models -lr 2e-3 -visible_gpus -1 -report_every 10 -save_checkpoint_steps 10 -batch_size 8 -train_steps 30 -accum_count 2 -log_file ~/o3/PreSumm/logs/ext_bert_cnndm -use_interval true -warmup_steps 10 -max_pos 512
 
-Step **5 - Test .**  Use  the  shebang .
+
+Step **5 - Val .**  Use  the  shebang  in colab.
+
+#!/bin/python
+python ~/o3/PreSumm/src/train.py -task ext -mode validate -batch_size 8 -test_batch_size 4 -bert_data_path ~o3/PreSumm/bert_data/cnndm -log_file ~/o3/PreSumm/logs/ext_bert_cnndm -model_path ~o3/PreSumm/models/ -sep_optim true -use_interval true -visible_gpus 1 -max_pos 10 -max_length 10 -alpha 0.95 -min_length 8 -result_path ~o3/PreSumm/logs/ext_bert_cnndm 
+
+
+Step **6 - Test .**  Use  the  shebang  in colab.
 
 #!/bin/python
 
