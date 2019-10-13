@@ -56,7 +56,7 @@ Step **5 - Test .**  Use  the  shebang .
 
 #!/bin/python
 
-python train.py -task ext -mode test -test_from ~o3/PreSumm/models/model_step_30.pt -batch_size 8 -test_batch_size 4 -bert_data_path ~o3/PreSumm/bert_data/cnndm -log_file ~o3/PreSumm/logs/val_abs_bert_cnndm -sep_optim true -use_interval true -visible_gpus -1 -max_pos 10 -max_length 10 -alpha 0.95 -min_length 8 -result_path ~o3/PreSumm/logs/abs_bert_cnndm
+python train.py -task ext -mode test -test_from ~o3/PreSumm/models/model_step_30.pt -batch_size 8 -test_batch_size 4 -bert_data_path ~o3/PreSumm/bert_data/cnndm -log_file ~o3/PreSumm/logs/val_abs_bert_cnndm -sep_optim true -use_interval true -visible_gpus -1 -max_pos 10 -max_length 10 -alpha 0.95 -min_length 8 -result_path ~o3/PreSumm/logs/ext_bert_cnndm
 
 See **Error screenshots**  in a drive folder.
 
