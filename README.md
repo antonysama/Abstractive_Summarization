@@ -21,6 +21,8 @@ Step **2 - Upload pyrouge .**  It's the ' .ipynb' sent separately. File >  "uplo
 
 Step **3 - Requirements .** In colab use prefix, !
 
+**Set environment to python 36** (e.g., conda activate p36)
+
     pip install multiprocess --user
     
     pip install tensorboardX --user
