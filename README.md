@@ -34,8 +34,10 @@ Step **4 - stanford-core-nlp .**   Use the bash. Edit the path if needed .
 
     %%bash
   
-    export CLASSPATH='/content/drive/My Drive/PreSumm/stanford/stanford-corenlp-3.9.2.jar'
+     #export CLASSPATH='/content/drive/My Drive/PreSumm/stanford/stanford-corenlp-3.9.2.jar'
   
+    export CLASSPATH= ~/o3/PreSumm/stanford/stanford-corenlp-3.9.2.jar
+    
     echo "Please tokenize this text." | java edu.stanford.nlp.process.PTBTokenizer
 
 
@@ -44,11 +46,11 @@ Skip preprocessing, we're running on pretrained data.
  
 Step **5 - Train .**  Use  the  shebang .
 
-
 #!/bin/python
 
-!python '/content/drive/My Drive/PreSumm/src/train.py' -task ext -mode train -bert_data_path 'content/drive/My Drive/PreSumm/bert_data/cnndm' -ext_dropout 0.1 -model_path 'content/drive/My Drive/PreSumm/models' -lr 2e-3 -visible_gpus -1 -report_every 10 -save_checkpoint_steps 10 -batch_size 8 -train_steps 30 -accum_count 2 -log_file 'drive/My Drive/PreSumm/logs/ext_bert_cnndm' -use_interval true -warmup_steps 10 -max_pos 512
+#!python '/content/drive/My Drive/PreSumm/src/train.py' -task ext -mode train -bert_data_path 'content/drive/My Drive/PreSumm/bert_data/cnndm' -ext_dropout 0.1 -model_path 'content/drive/My Drive/PreSumm/models' -lr 2e-3 -visible_gpus -1 -report_every 10 -save_checkpoint_steps 10 -batch_size 8 -train_steps 30 -accum_count 2 -log_file 'drive/My Drive/PreSumm/logs/ext_bert_cnndm' -use_interval true -warmup_steps 10 -max_pos 512
 
+python ~/o3/PreSumm/src/train.py -task ext -mode train -bert_data_path ~/o3/PreSumm/bert_data/cnndm -ext_dropout 0.1 -model_path ~/o3/PreSumm/models -lr 2e-3 -visible_gpus -1 -report_every 10 -save_checkpoint_steps 10 -batch_size 8 -train_steps 30 -accum_count 2 -log_file ~/o3/PreSumm/logs/ext_bert_cnndm -use_interval true -warmup_steps 10 -max_pos 512
 
 
 See **Error screenshots**  in a drive folder.
