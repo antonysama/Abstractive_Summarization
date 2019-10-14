@@ -59,8 +59,9 @@ Step **5 - Val .**  in colab use  shebang  .
 
 #!/bin/python
 
-python ~/o3/PreSumm/src/train.py -task ext -mode validate -batch_size 300 -test_batch_size 50 -bert_data_path ~o3/PreSumm/bert_data/cnndm -log_file ~/o3/PreSumm/logs/ext_bert_cnndm -model_path ~o3/PreSumm/models/ -sep_optim true -use_interval true -visible_gpus -1 -max_pos 512 -max_length 200 -alpha 0.95 -min_length 50 -result_path ~o3/PreSumm/logs/ext_bert_cnndm
+python ~/o3/PreSumm/src/train.py -task ext -mode validate -batch_size 300 -test_batch_size 50 -bert_data_path ~o3/PreSumm/bert_data3/cnndm -log_file ~/o3/PreSumm/logs/ext_bert_cnndm -model_path ~o3/PreSumm/models/ -sep_optim true -use_interval true -visible_gpus -1 -max_pos 512 -max_length 200 -alpha 0.95 -min_length 50 -result_path ~o3/PreSumm/logs/ext_bert_cnndm
 
+*i kept fewer files in bert_data3, for debugging only.
 
 Step **6 - Test .**  in colab use  shebang  .
 
