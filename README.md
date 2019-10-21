@@ -36,7 +36,7 @@ Step **4 - stanford-core-nlp .**   Use the bash. Edit the path if needed .
 
     %%bash
   
-     #export CLASSPATH='/content/drive/My Drive/PreSumm/stanford/stanford-corenlp-3.9.2.jar'
+    #export CLASSPATH='/content/drive/My Drive/PreSumm/stanford/stanford-corenlp-3.9.2.jar'
   
     export CLASSPATH=~/o3/PreSumm/stanford/stanford-corenlp-3.9.2.jar
     
@@ -46,28 +46,11 @@ Step **4 - stanford-core-nlp .**   Use the bash. Edit the path if needed .
 Skip preprocessing, we're running on pretrained data.
  
  
-Step **5 - Train .**  in colab use  shebang .
+Step **5 - Test .**  in colab use  shebang .
 
-#!/bin/python
+    python process_test.py ~/o3/PreSumm/raw_data/test.txt
+    
+    #!/bin/python
 
-#!python '/content/drive/My Drive/PreSumm/src/train.py' -task ext -mode train -bert_data_path 'content/drive/My Drive/PreSumm/bert_data/cnndm' -ext_dropout 0.1 -model_path 'content/drive/My Drive/PreSumm/models' -lr 2e-3 -visible_gpus -1 -report_every 10 -save_checkpoint_steps 10 -batch_size 8 -train_steps 30 -accum_count 2 -log_file 'drive/My Drive/PreSumm/logs/ext_bert_cnndm' -use_interval true -warmup_steps 10 -max_pos 512
-
-python ~/o3/PreSumm/src/train.py -task ext -mode train -bert_data_path ~/o3/PreSumm/bert_data/cnndm -ext_dropout 0.1 -model_path ~/o3/PreSumm/models -lr 2e-3 -visible_gpus -1 -report_every 10 -save_checkpoint_steps 10 -batch_size 8 -train_steps 30 -accum_count 2 -log_file ~/o3/PreSumm/logs/ext_bert_cnndm -use_interval true -warmup_steps 10 -max_pos 512
-
-
-Step **5 - Val .**  in colab use  shebang  .
-
-#!/bin/python
-
-python ~/o3/PreSumm/src/train.py -task ext -mode validate -batch_size 300 -test_batch_size 50 -bert_data_path ~o3/PreSumm/bert_data3/cnndm -log_file ~/o3/PreSumm/logs/ext_bert_cnndm -model_path ~o3/PreSumm/models/ -sep_optim true -use_interval true -visible_gpus -1 -max_pos 512 -max_length 200 -alpha 0.95 -min_length 50 -result_path ~o3/PreSumm/logs/ext_bert_cnndm
-
-*i kept fewer files in bert_data3, for debugging only.
-
-Step **6 - Test .**  in colab use  shebang  .
-
-#!/bin/python
-
-'python ~/o3/PreSumm/src/train.py -task ext -mode test -test_from ~o3/PreSumm/models/model_step_30.pt -batch_size 8 -test_batch_size 4 -bert_data_path ~o3/PreSumm/bert_data/cnndm -log_file ~o3/PreSumm/logs/val_abs_bert_cnndm -sep_optim true -use_interval true -visible_gpus -1 -max_pos 10 -max_length 10 -alpha 0.95 -min_length 8 -result_path ~o3/PreSumm/logs/ext_bert_cnndm'
-
-See **Error screenshots**  in a drive folder.
+    python train.py -task abs -mode test -test_from ../models/model_step_148000.pt -batch_size 3000 -test_batch_size 50 -bert_data_path ../bert_data/cnndm -log_file ../logs/val_abs_bert_cnndm -sep_optim true -use_interval true -visible_gpus 0 -max_pos 512 -max_length 200 -alpha 0.95 -min_length 50 -result_path ../logs/abs_test_result
 
