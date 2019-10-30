@@ -46,7 +46,7 @@ Step **4 - stanford-core-nlp .**   Use the bash. Edit the path if needed .
 Skip preprocessing, we're running on pretrained data.
  
  
-Step **5 - Test .**  in colab use  shebang .
+Step **5 - Test .**  Foll. under src folder. In colab use  shebang .
 
     python process_test.py ~/o3/PreSumm/raw_data/cnn/test.txt
     
