@@ -52,5 +52,7 @@ Step **5 - Test .**  Foll. under src folder. In colab use  shebang .
     
     #!/bin/python
 
+# clean out .pt files under raw data/cnn/bert; other .pt files and logs
+
     python train.py -task abs -mode test -test_from ../models/model_step_148000.pt -batch_size 3000 -test_batch_size 50 -bert_data_path ../bert_data/cnndm -log_file ../logs/val_abs_bert_cnndm -sep_optim true -use_interval true -visible_gpus 0 -max_pos 512 -max_length 200 -alpha 0.95 -min_length 50 -result_path ../logs/abs_test_result
 
