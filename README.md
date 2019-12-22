@@ -1,7 +1,7 @@
 **Outcome:**
 Customizes a popular repo by same name. To do abstractive summarization of own text files.
 
-**Methods:* on Colab & Drive  (python 3) 
+**Methods:**  on Colab & Drive  (python 3) 
 
 Do not 'mount' drive untill you install the dependnecy in step 2 .  ( Under google 'drive' > 'My Drive' is the 'PreSumm' clone. It's the oroginal repo. Under 'bert_data' is pre-preprocessed data. Under 'models' , a pretrained  model. Under 'stanford', the  stanford-core-nlp files. )
 
