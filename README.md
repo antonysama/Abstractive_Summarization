@@ -1,5 +1,5 @@
 **Outcome:**
-Customizes a popular repo by same name. To do abstractive summarization of own text files.
+Customizes a popular repo by same name. To do abstractive summarization of  one's own text files.
 
 **Methods:**  (Python 3 on Jupyter/ Google Colab) 
 
