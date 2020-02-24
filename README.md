@@ -1,4 +1,8 @@
 **Outcome:**
+conda activate p36
+pip install --upgrade pip --user
+
+**Outcome:**
 Customizes a popular repo by same name. To do abstractive summarization of  one's own text files.
 
 **Methods:**  (Python 3 on Jupyter/ Google Colab) 
