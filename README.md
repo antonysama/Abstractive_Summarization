@@ -1,4 +1,4 @@
-**Outcome:**
+**First things first:**
 conda activate p36
 pip install --upgrade pip --user
 
